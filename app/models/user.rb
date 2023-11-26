@@ -1,10 +1,6 @@
 class User < ApplicationRecord
   has_many :permissions
 
-  def desactivate!(reason)
-    update(reason: reason, active: false)
-  end
-
   def set_permission(permission_name)
     permissions.create(name: permission_name)
     activate!("because #{permission_name} was created!")
