@@ -1,10 +1,6 @@
 class User < ApplicationRecord
   has_many :permissions
 
-  def activate!(reason)
-    update(reason: reason, active: true)
-  end
-
   def desactivate!(reason)
     update(reason: reason, active: false)
   end
